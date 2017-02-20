@@ -95,7 +95,9 @@ module.exports = (function(){
             parentType:"CTY15CD",
             childType: neighbourObj["neighbour_type"],
             childId: neighbourId,
-            mappingType:"5m-neighbour-mapping"
+            mappingType:"5m-neighbour-mapping",
+            childName: neighbourObj["neighbour_name"],
+            parentName: neighbourObj["parent_name"]
           };
           mappingId += 1;
           return (eachObj);
@@ -104,7 +106,7 @@ module.exports = (function(){
           _.forEach(result,(val) => {
             if(val.childId !== null){
               val = JSON.stringify(val)+"\n";
-              fs.appendFileSync(getPath("neighbour.json"),val,{encoding:"utf-8"});
+              fs.appendFileSync(getPath("neighbour2.json"),val,{encoding:"utf-8"});
             }
           });
           if(index<CTYObj.length-1){

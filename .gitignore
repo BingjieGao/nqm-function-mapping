@@ -1,3 +1,4 @@
 *.json
 rawFiles/
 jsonFiles/
+node_modules/
